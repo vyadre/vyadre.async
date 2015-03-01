@@ -1,0 +1,23 @@
+{
+  "name": "vyadre-async",
+  "version": "0.0.1",
+  "description": "Реализация async для VYadre, нацеленная на максимальную производительность в обмен на строгое соблюдение требований, прописанных в README.md",
+  "main": "lib/async.js",
+  "scripts": {
+    "test": "node tests/tests.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vyadre/vyadre.async.git"
+  },
+  "keywords": [
+    "async",
+    "VYadre"
+  ],
+  "author": "Aleksei Ganin",
+  "license": "GNU GPL v2.0",
+  "bugs": {
+    "url": "https://github.com/vyadre/vyadre.async/issues"
+  },
+  "homepage": "https://github.com/vyadre/vyadre.async"
+}
