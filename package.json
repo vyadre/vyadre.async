@@ -1,6 +1,6 @@
 {
   "name": "vyadre.async",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Реализация async для VYadre, нацеленная на максимальную производительность в обмен на строгое соблюдение требований, прописанных в README.md",
   "main": "lib/vyadre.async.js",
   "scripts": {
