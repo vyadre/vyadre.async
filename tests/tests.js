@@ -1,4 +1,4 @@
-var async = require('../lib/fastAsync.js');
+var async = require('../lib/vyadre.async.js');
 
 
 var st = Date.now();
