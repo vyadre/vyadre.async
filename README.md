@@ -6,6 +6,5 @@
 Пока реализованы методы:
   parallel(tasks, callback);
   series(tasks, callback);
-  
-Планируется в ближайшее время реализовать:
   waterfall(tasks, callback);
+  

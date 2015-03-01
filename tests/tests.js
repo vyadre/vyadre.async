@@ -59,7 +59,7 @@ async.series([function(next){
     return function(next){
       setTimeout(function(){
 	console.log(i);
-	next();
+	next(i === 15 ? i : null);
       }, Math.random() * 10);
     };
   });
@@ -70,6 +70,12 @@ async.series([function(next){
 }, function(next){
   console.log("testsRandomF async.series");
   async.series(testsRandomF, next);
+}, function(next){
+  console.log("testsRandomF async.waterfall");
+  async.waterfall(testsRandomF, function(err){
+    console.log("test err callback:", err);
+    next();
+  });
 }], function(){
   console.log("Все тесты завершены =)");
 });
