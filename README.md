@@ -28,7 +28,7 @@ messages.sendMessage
 ================== Test apiPerformance =======================
 apiPerformance тестируется метод api messages.sendMessage
 OK: тест apiPerformance пройден за 64622 ms
-messages.sendMessage <br>
+messages.sendMessage
   {"requests":8192,"concurrency":16}
   rps: 126.85631107050499
   maxResponseTime: 433
