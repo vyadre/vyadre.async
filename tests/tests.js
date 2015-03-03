@@ -1,7 +1,8 @@
 var async = require('../lib/vyadre.async.js');
+var testsF, testsRandom, testsRandomF;
 
 
-var testsF, testsRandomF;
+var perfTestCount = 1000;
 
 async.series([function(next){
   var st = Date.now();
@@ -27,7 +28,7 @@ async.series([function(next){
   });
 }, function(next){
   var tests = [];
-  for(var i = 0; i < 1000000; i++){
+  for(var i = 0; i < perfTestCount; i++){
     tests.push(i);
   }
   testsF = tests.map(function(i){
@@ -51,7 +52,7 @@ async.series([function(next){
     next();
   });
 }, function(next){
-  var testsRandom = [];
+  testsRandom = [];
   for(var i = 0; i < 100; i++){
     testsRandom.push(i);
   }
@@ -76,6 +77,20 @@ async.series([function(next){
     console.log("test err callback:", err);
     next();
   });
+}, function(next){
+  console.log("testsRandomF async.map");
+  async.map(testsRandom, function(i, next){
+    console.log("async.map:", i);
+    next();
+  }, next)
+}, function(next){
+  console.log("testsRandomF async.map");
+  async.map(testsRandom, function(i, next){
+    setTimeout(function(){
+      console.log("async.map:", i);
+      next();
+    }, Math.random() * 10);
+  }, next)
 }], function(){
   console.log("Все тесты завершены =)");
 });
